@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * @author: Rachel Stinnett and Nees Abusaada
+ * @file: fragment_location.xml
+ * @assignment: Final Programming Assignment- Traveling Viewer
+ * @course: CSC 317; Spring 2022
+ * @description: The purpose of this app is to  implement a traveling log app.
+ * This app is specific to users who want to make traveling their hobby and
+ * create a fun way to save travel memories. In order to do that, the user
+ * will be able to keep track of places they have been around the world,
+ * add pictures of those places to save memories, add contacts to the app
+ * to share stuff with other people, and make reflective notes. The application
+ * will have multiple screens, buttons, texts, and images, all of which follow
+ * a specific style. This program does this by incorporating the use of fragments
+ * and activities. The GoogleMaps API is used to display the locations the user
+ * pins as well as the locations of the photos and notes taken. In addition,
+ * the Wikipedia API is used to display a webpage if the user clicks on a
+ * location in the list. The data is contained in ArrayLists which makes
+ * it applicable to store in text files (.txt) using internal storage. Content
+ * providers are used in order to gather the contacts data for sharing. Explicit
+ * intents are used for sending emails, SMS messages and taking photos. In this
+ * fragment_location is where everything in the location screen is laid out
+ * using various view elements like buttons, imageViews, textViews, and a
+ * listView. A constraint layout was used to adapt better to various screen sizes
+ * and tablets.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/locationScreenLayout"
+        android:layout_width="match_parent"
+        android:layout_height="718dp"
+        android:background="@color/locationsBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/locationsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/freckle_face"
+            android:text="@string/locationsTitle"
+            android:textColor="@color/textColor"
+            android:textSize="12pt"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/editText3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/locationScreenLayout" />
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/enterLocation"
+            android:textColor="@color/textColor"
+            android:textSize="10pt"
+            app:layout_constraintBottom_toTopOf="@id/mapImage"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/addButton3"
+            app:layout_constraintTop_toBottomOf="@id/locationsTitle" />
+
+        <Button
+            android:id="@+id/addButton3"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/locationsAdd"
+            android:text="@string/buttonText1"
+            android:textColor="@color/textColor"
+            android:textSize="5pt"
+            app:layout_constraintBottom_toTopOf="@id/deleteButton3"
+            app:layout_constraintLeft_toRightOf="@id/editText3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationsTitle" />
+
+        <Button
+            android:id="@+id/deleteButton3"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:backgroundTint="@color/locationsDelete"
+            android:text="@string/buttonText2"
+            android:textColor="@color/textColor"
+            android:textSize="5pt"
+            app:layout_constraintBottom_toTopOf="@id/mapImage"
+            app:layout_constraintLeft_toRightOf="@id/editText3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addButton3" />
+
+        <ImageView
+            android:id="@+id/mapImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/map"
+            app:layout_constraintBottom_toTopOf="@id/locationListView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editText3" />
+
+        <ListView
+            android:id="@+id/locationListView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/locationsListView"
+            app:layout_constraintBottom_toTopOf="@id/viewMapButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mapImage" />
+
+        <Button
+            android:id="@+id/viewMapButton"
+            android:layout_width="160dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/locationsViewMap"
+            android:text="@string/viewMapButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationListView" />
+
+        <Button
+            android:id="@+id/shareLocationButton"
+            android:layout_width="160dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/locationsShare"
+            android:text="@string/shareLocationButton"
+            app:layout_constraintTop_toBottomOf="@id/viewMapButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/webPageButton"
+            android:layout_width="160dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/webButtonColor"
+            android:text="@string/webPageButton"
+            app:layout_constraintTop_toBottomOf="@id/shareLocationButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

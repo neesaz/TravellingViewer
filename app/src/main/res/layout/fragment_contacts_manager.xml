@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * @author: Rachel Stinnett and Nees Abusaada
+ * @file: fragment_contacts_manager.xml
+ * @assignment: Final Programming Assignment- Traveling Viewer
+ * @course: CSC 317; Spring 2022
+ * @description: The purpose of this app is to  implement a traveling log app.
+ * This app is specific to users who want to make traveling their hobby and
+ * create a fun way to save travel memories. In order to do that, the user
+ * will be able to keep track of places they have been around the world,
+ * add pictures of those places to save memories, add contacts to the app
+ * to share stuff with other people, and make reflective notes. The application
+ * will have multiple screens, buttons, texts, and images, all of which follow
+ * a specific style. This program does this by incorporating the use of fragments
+ * and activities. The GoogleMaps API is used to display the locations the user
+ * pins as well as the locations of the photos and notes taken. In addition,
+ * the Wikipedia API is used to display a webpage if the user clicks on a
+ * location in the list. The data is contained in ArrayLists which makes
+ * it applicable to store in text files (.txt) using internal storage. Content
+ * providers are used in order to gather the contacts data for sharing. Explicit
+ * intents are used for sending emails, SMS messages and taking photos. In this
+ * fragment_contacts_managers.xml displays the contact list so it has a
+ * text view for the title and then a list view. A constraint layout was used
+ * so that the elements can adapt to different devices like tablets or screen
+ * sizes.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactsManagerFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/contactsLayout"
+        android:background="@color/layoutBackgroundColor">
+
+        <TextView
+            android:id="@+id/contactsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/chicle"
+            android:text="@string/contactsTitle"
+            android:textColor="@color/textColor"
+            android:textSize="18pt"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/contactsLayout"
+            app:layout_constraintBottom_toTopOf="@id/contactsListView"/>
+
+        <ListView
+            android:id="@+id/contactsListView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/layoutBackgroundColor"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contactsTitle"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

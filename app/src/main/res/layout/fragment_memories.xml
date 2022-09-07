@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * @author: Rachel Stinnett and Nees Abusaada
+ * @file: fragment_memories.xml
+ * @assignment: Final Programming Assignment- Traveling Viewer
+ * @course: CSC 317; Spring 2022
+ * @description: The purpose of this app is to  implement a traveling log app.
+ * This app is specific to users who want to make traveling their hobby and
+ * create a fun way to save travel memories. In order to do that, the user
+ * will be able to keep track of places they have been around the world,
+ * add pictures of those places to save memories, add contacts to the app
+ * to share stuff with other people, and make reflective notes. The application
+ * will have multiple screens, buttons, texts, and images, all of which follow
+ * a specific style. This program does this by incorporating the use of fragments
+ * and activities. The GoogleMaps API is used to display the locations the user
+ * pins as well as the locations of the photos and notes taken. In addition,
+ * the Wikipedia API is used to display a webpage if the user clicks on a
+ * location in the list. The data is contained in ArrayLists which makes
+ * it applicable to store in text files (.txt) using internal storage. Content
+ * providers are used in order to gather the contacts data for sharing. Explicit
+ * intents are used for sending emails, SMS messages and taking photos. In this
+ * fragment_memories has all the buttons, lists, and images that should appear in
+ * the screen. There is a button that opens the camera, button to delete image,
+ * button to share the image, and another button to see the information image.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#57E9118F"
+    tools:context=".MemoriesFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/memoriesBackgroundColor"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:context=".MemoriesFragment">
+
+        <TextView
+            android:id="@+id/memoriesTitle"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="cursive"
+            android:text="@string/memoriesTitle"
+            android:textColor="@color/memoriesText"
+            android:textSize="18pt"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/addImageCamera"/>
+
+        <Button
+            android:id="@+id/addImageCamera"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/memoriesAdd"
+            android:text="click here to open the camera"
+            android:textColor="@color/textColor"
+            android:textSize="5pt"
+            app:layout_constraintBottom_toTopOf="@id/viewInfoButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memoriesTitle" />
+
+        <Button
+            android:id="@+id/deleteButtonMem"
+            android:layout_width="86dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/memoriesDelete"
+            android:text="@string/buttonText2"
+            android:textColor="@color/textColor"
+            android:textSize="5pt"
+            app:layout_constraintBottom_toTopOf="@id/memoriesListView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/viewInfoButton"
+            app:layout_constraintTop_toBottomOf="@id/addImageCamera" />
+
+        <Button
+            android:id="@+id/viewInfoButton"
+            android:layout_width="85dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/memoriesView"
+            android:text="@string/viewButton"
+            android:textColor="@color/textColor"
+            android:textSize="5pt"
+            app:layout_constraintBottom_toTopOf="@id/memoriesListView"
+            app:layout_constraintLeft_toRightOf="@id/deleteButtonMem"
+            app:layout_constraintRight_toLeftOf="@id/shareImageButton"
+            app:layout_constraintTop_toBottomOf="@id/addImageCamera" />
+
+        <Button
+            android:id="@+id/shareImageButton"
+            android:layout_width="85dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/memoriesShare"
+            android:text="@string/viewShareButton"
+            android:textColor="@color/textColor"
+            android:textSize="5pt"
+            app:layout_constraintBottom_toTopOf="@id/memoriesListView"
+            app:layout_constraintLeft_toRightOf="@id/viewInfoButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addImageCamera" />
+
+        <ListView
+            android:id="@+id/memoriesListView"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewInfoButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

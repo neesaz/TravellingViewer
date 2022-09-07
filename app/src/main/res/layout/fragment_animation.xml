@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * @author: Rachel Stinnett and Nees Abusaada
+ * @file: fragment_animation.xml
+ * @assignment: Final Programming Assignment- Traveling Viewer
+ * @course: CSC 317; Spring 2022
+ * @description: The purpose of this app is to  implement a traveling log app.
+ * This app is specific to users who want to make traveling their hobby and
+ * create a fun way to save travel memories. In order to do that, the user
+ * will be able to keep track of places they have been around the world,
+ * add pictures of those places to save memories, add contacts to the app
+ * to share stuff with other people, and make reflective notes. The application
+ * will have multiple screens, buttons, texts, and images, all of which follow
+ * a specific style. This program does this by incorporating the use of fragments
+ * and activities. The GoogleMaps API is used to display the locations the user
+ * pins as well as the locations of the photos and notes taken. In addition,
+ * the Wikipedia API is used to display a webpage if the user clicks on a
+ * location in the list. The data is contained in ArrayLists which makes
+ * it applicable to store in text files (.txt) using internal storage. Content
+ * providers are used in order to gather the contacts data for sharing. Explicit
+ * intents are used for sending emails, SMS messages and taking photos. In this
+ * fragment_animation.xml two image views are added to the screen. The first
+ * one will be animated while the second one functions as start button. A
+ * constraint layout was used to make sure that this adapts well to tablets.
+ */
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnimationFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mainConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="293dp"
+            android:layout_height="370dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="446dp"
+            android:layout_height="271dp"
+            android:onClick="sendMessage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/getstarted" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

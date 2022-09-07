@@ -1,0 +1,85 @@
+<!--
+/*
+* @author: Rachel Stinnett and Nees Abusaada
+* @file: themes.xml
+* @assignment: Final Programming Assignment- Traveling Viewer
+* @course: CSC 317; Spring 2022
+* @description: The purpose of this app is to  implement a traveling log app.
+* This app is specific to users who want to make traveling their hobby and
+* create a fun way to save travel memories. In order to do that, the user
+* will be able to keep track of places they have been around the world,
+* add pictures of those places to save memories, add contacts to the app
+* to share stuff with other people, and make reflective notes. The application
+* will have multiple screens, buttons, texts, and images, all of which follow
+* a specific style. This program does this by incorporating the use of fragments
+* and activities. The GoogleMaps API is used to display the locations the user
+* pins as well as the locations of the photos and notes taken. In addition,
+* the Wikipedia API is used to display a webpage if the user clicks on a
+* location in the list. The data is contained in ArrayLists which makes
+* it applicable to store in text files (.txt) using internal storage. Content
+* providers are used in order to gather the contacts data for sharing. Explicit
+* intents are used for sending emails, SMS messages and taking photos. In this
+* strings.xml all of the strings for this application are externalized here.
+* There are a lot of string to be displayed within buttons and edit texts as
+* well as lengthy strings that need to be externalized.
+*/
+-->
+<resources>
+    <string name="app_name">TravelingViewer</string>
+    <string name="appTitle">Traveling Viewer</string>
+    <string name="enterTrip">Add your trip with the month-year (trip, mm-yyyy)</string>
+    <string name="buttonText1">ADD</string>
+    <string name="buttonText2">DELETE</string>
+    <string name="helpButton">HELP</string>
+    <string name="locationButton">Locations</string>
+    <string name="photosButton">Memories</string>
+    <string name="notesButton">Notes</string>
+    <string name="shareButton">Share</string>
+    <string name="viewShareButton">View</string>
+    <string name="mapButton">Map</string>
+    <string name="notesTitle">Notes Manager</string>
+    <string name="enterNote">Add notes or memories...</string>
+    <string name="contactsTitle">Contacts Manager</string>
+    <string name="chooseSMS">SMS</string>
+    <string name="chooseGMAIL">GMAIL</string>
+    <string name="chooseShare">SHARE</string>
+    <string name="chooseMaps">MAPS</string>
+    <string name="retry">RETRY</string>
+    <string name="locationsTitle">Locations Manager</string>
+    <string name="enterLocation">Add locations...</string>
+    <string name="viewMapButton">View On Map</string>
+    <string name="shareLocationButton">Share Location</string>
+    <string name="enterLocationMem">Add Location to Image...</string>
+    <string name="memoriesTitle">Image Manager</string>
+    <string name="viewButton">INFO</string>
+    <string name="nextButton">NEXT</string>
+    <string name="chooseOk">OK</string>
+    <string name="webPageButton">Web Page</string>
+    <string name="highlightButton">Highlights</string>
+    <string name="highlightTitle">Traveling Highlights</string>
+    <string name="wikipediaURLPart1"><![CDATA[https://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&generator=allpages&inprop=url&gapfrom=]]></string>
+    <string name="wikipediaURLPart2"><![CDATA[&gaplimit=5]]></string>
+    <string name="requestProperty">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 OPR/71.0.3770.284</string>
+    <string name="locationError">Location Error</string>
+    <string name="placeEntered">The place you entered is not on the map. Please check your spelling...</string>
+    <string name="viewingScreen">Viewing</string>
+    <string name="shareOr">\"Do you want to share the image or view on Maps? \"</string>
+    <string name="shareingChoose">Sharing</string>
+    <string name="sharingChoose">Sharing</string>
+    <string name="chooseMethodShare">Choose the method of Sharing you would like...</string>
+    <string name="plainText">plain/text</string>
+    <string name="travellerNote">Traveller Viewer Note</string>
+    <string name="vndEmail">vnd.android.cursor.dir/email</string>
+    <string name="smsString">vnd.android-dir/mms-sms</string>
+    <string name="displayText">LocationDisplay.txt</string>
+    <string name="appText">TravelingViewer.txt</string>
+    <string name="providerString">com.example.android.fileprovider</string>
+    <string name="format">yyyyMMdd_HHmmss</string>
+    <string name="notesLongTxt">NotesLong.txt</string>
+    <string name="notesLatTxt">NotesLat.txt</string>
+    <string name="imageTitle">TravellingViewerImage</string>
+    <string name="imageInfo">Image Information</string>
+    <string name="hereGather">Here is some gathered info.</string>
+    <string name="takenAt">\" The image was taken at \"</string>
+
+</resources>

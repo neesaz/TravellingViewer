@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * @author: Rachel Stinnett and Nees Abusaada
+ * @file: activity_image_slide_show.java
+ * @assignment: Final Programming Assignment- Traveling Viewer
+ * @course: CSC 317; Spring 2022
+ * @description: The purpose of this app is to  implement a traveling log app.
+ * This app is specific to users who want to make traveling their hobby and
+ * create a fun way to save travel memories. In order to do that, the user
+ * will be able to keep track of places they have been around the world,
+ * add pictures of those places to save memories, add contacts to the app
+ * to share stuff with other people, and make reflective notes. The application
+ * will have multiple screens, buttons, texts, and images, all of which follow
+ * a specific style. This program does this by incorporating the use of fragments
+ * and activities. The GoogleMaps API is used to display the locations the user
+ * pins as well as the locations of the photos and notes taken. In addition,
+ * the Wikipedia API is used to display a webpage if the user clicks on a
+ * location in the list. The data is contained in ArrayLists which makes
+ * it applicable to store in text files (.txt) using internal storage. Content
+ * providers are used in order to gather the contacts data for sharing. Explicit
+ * intents are used for sending emails, SMS messages and taking photos. In this
+ * activity_image_slide_show.xml provides four image views so that the images
+ * could be changed for the slide show programmatically. A constraint layout was
+ * used to adapt better to various screen sizes and tablets.
+ */
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/slideShowLayout"
+    android:background="#40CE389C"
+    tools:context=".ImageSlideShow">
+    <TextView
+        android:id="@+id/slideShowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/freckle_face"
+        android:text="@string/highlightTitle"
+        android:textColor="@color/textColor"
+        android:textSize="18pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/image_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slideShowLayout" />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType = "centerCrop"
+        android:id="@+id/image_1"
+        app:layout_constraintTop_toBottomOf="@id/slideShowTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/image_2"
+        app:layout_constraintBottom_toTopOf="@id/image_3" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType = "centerCrop"
+        android:id="@+id/image_2"
+        app:layout_constraintTop_toBottomOf="@id/slideShowTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/image_1"
+        app:layout_constraintBottom_toTopOf="@id/image_4" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType = "centerCrop"
+        android:id="@+id/image_3"
+        app:layout_constraintTop_toBottomOf="@id/image_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/image_4"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType = "centerCrop"
+        android:id="@+id/image_4"
+        app:layout_constraintTop_toBottomOf="@id/image_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/image_3"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

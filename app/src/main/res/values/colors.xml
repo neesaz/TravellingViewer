@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * @author: Rachel Stinnett and Nees Abusaada
+ * @file: colors.xml
+ * @assignment: Final Programming Assignment- Traveling Viewer
+ * @course: CSC 317; Spring 2022
+ * @description: The purpose of this app is to  implement a traveling log app.
+ * This app is specific to users who want to make traveling their hobby and
+ * create a fun way to save travel memories. In order to do that, the user
+ * will be able to keep track of places they have been around the world,
+ * add pictures of those places to save memories, add contacts to the app
+ * to share stuff with other people, and make reflective notes. The application
+ * will have multiple screens, buttons, texts, and images, all of which follow
+ * a specific style. This program does this by incorporating the use of fragments
+ * and activities. The GoogleMaps API is used to display the locations the user
+ * pins as well as the locations of the photos and notes taken. In addition,
+ * the Wikipedia API is used to display a webpage if the user clicks on a
+ * location in the list. The data is contained in ArrayLists which makes
+ * it applicable to store in text files (.txt) using internal storage. Content
+ * providers are used in order to gather the contacts data for sharing. Explicit
+ * intents are used for sending emails, SMS messages and taking photos. In this
+ * colors.xml all of the colors for the program are stored here for the xml within
+ * the fragments and activities. Like the various button colors and the list view
+ * background color.
+ */
+-->
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#85678A</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="layoutBackgroundColor">#EAE1EC</color>
+    <color name="textColor">#240629</color>
+    <color name="buttonColor1">#8DEF91</color>
+    <color name="buttonColor2">#E8759C</color>
+    <color name="helpButtonColor">#F38282</color>
+    <color name="locationButtonColor">#C95EDC</color>
+    <color name="photosButtonColor">#712CD5</color>
+    <color name="notesButtonColor">#474D6B</color>
+    <color name="shareButtonColor">#D8BF74</color>
+    <color name="webButtonColor">#E96491</color>
+    <color name="mapButtonColor">#009688</color>
+    <color name="memFragBackground">#602B48</color>
+    <color name="clickImageColor">#7A4F4F</color>
+    <color name="locationsBackground">#40CE389C</color>
+    <color name="locationsAdd">#31765683</color>
+    <color name="locationsDelete">#66E8759C</color>
+    <color name="locationsListView">#43DCA3EA</color>
+    <color name="locationsViewMap">#68E040FB</color>
+    <color name="locationsShare">#0F3A1940</color>
+    <color name="mainScreenHelpColor">#E68373A3</color>
+    <color name="mainScreenAddColor">#6B5A0F8F</color>
+    <color name="mainScreenDeleteColor">#51CE389C</color>
+    <color name="mainScreenNextColor">#39712CD5</color>
+    <color name="mainScreenHighlightColor">#E2AAEC</color>
+    <color name="optionsLocationColor">#CE389C</color>
+    <color name="optionsMemoryColor">#46E9118F</color>
+    <color name="optionsNotesColor">#9C682A77</color>
+    <color name="optionsHelpColor">#9C79B7</color>
+    <color name="notesBackgroundColor">#9C682A77</color>
+    <color name="notesAdd">#8074B6</color>
+    <color name="notesDelete">#40A55771</color>
+    <color name="notesShare">#56462D68</color>
+    <color name="notesMap">#2C781AD6</color>
+    <color name="memoriesBackgroundColor">#57E9118F</color>
+    <color name="memoriesText">#B0350A18</color>
+    <color name="memoriesAdd">#467A4F4F</color>
+    <color name="memoriesDelete">#99E8759C</color>
+    <color name="memoriesView">#83913755</color>
+    <color name="memoriesShare">#61462D73</color>
+    <color name="helpGo">#B388FF</color>
+    <color name="helpBack">#B388FF</color>
+
+</resources>
